@@ -1,7 +1,7 @@
 
-docker build -t bpayet/multi-client:latest -t bpayet/multi-client:$GIT_SHA ./client/Dockerfile ./client
-docker build -t bpayet/multi-server:latest -t bpayet/multi-server:$GIT_SHA ./server/Dockerfile ./server
-docker build -t bpayet/multi-worker:latest -t bpayet/multi-worker:$GIT_SHA ./worker/Dockerfile ./worker
+docker build -t bpayet/multi-client:latest -t bpayet/multi-client:$GIT_SHA -f ./client/Dockerfile ./client
+docker build -t bpayet/multi-server:latest -t bpayet/multi-server:$GIT_SHA -f ./server/Dockerfile ./server
+docker build -t bpayet/multi-worker:latest -t bpayet/multi-worker:$GIT_SHA -f ./worker/Dockerfile ./worker
 
 docker push bpayet/multi-client:latest
 docker push bpayet/multi-server:latest
