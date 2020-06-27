@@ -14,5 +14,5 @@ docker push bpayet/multi-worker:$GIT_SHA
 kubectl apply -f ./k8s
 
 kubectl set image deployments/server-deployment server=bpayet/multi-server:$GIT_SHA
-kubectl set image deployments/client-deployment server=bpayet/multi-client:$GIT_SHA
-kubectl set image deployments/worker-deployment server=bpayet/multi-worker:$GIT_SHA
+kubectl set image deployments/client-deployment client=bpayet/multi-client:$GIT_SHA
+kubectl set image deployments/worker-deployment worker=bpayet/multi-worker:$GIT_SHA
