@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: webuydeliverforu-com-tls
+spec:
+  secretName: webuydeliverforu-com
+  issueRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: webuydeliverforu.com
+  dnsNames:
+    - webuydeliver4u.com
+    - www.webuydeliver4u.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - webuydeliver4u.com
+          - www.webuydeliver4u.com
